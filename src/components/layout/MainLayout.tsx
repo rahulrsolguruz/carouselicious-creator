@@ -16,9 +16,9 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       <div className="flex min-h-screen bg-[#FCFCFC]">
         <Sidebar />
         
-        <main className="flex-1 pt-4 md:pt-0 overflow-auto transition-all duration-300 animate-fade-in">
+        <main className="flex-1 overflow-auto transition-all duration-300 animate-fade-in">
           {isMobile && (
-            <div className="px-4 pb-4">
+            <div className="px-4 py-2">
               <SidebarTrigger />
             </div>
           )}

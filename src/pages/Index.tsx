@@ -1,12 +1,7 @@
-
 import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import CarouselEditor from '@/components/carousel/CarouselEditor';
-import { 
-  FileText, 
-  Plus, 
-  ArrowRight 
-} from 'lucide-react';
+import { Plus, FileText, ArrowRight } from 'lucide-react';
 import CustomButton from '@/components/ui/custom-button';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -16,37 +11,37 @@ const Index = () => {
 
   return (
     <MainLayout>
-      <div className="container max-w-7xl px-4 py-4 md:py-8">
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-6">
+      <div className="container px-4 md:px-6 py-4 md:py-6 max-w-full">
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 md:mb-6">
           <div>
-            <h1 className="text-3xl md:text-4xl font-bold font-display">Dashboard</h1>
+            <h1 className="text-3xl font-bold font-display">Dashboard</h1>
             <p className="text-gray-600 mt-1">Create and manage your LinkedIn carousels</p>
           </div>
           
-          <div className="mt-4 lg:mt-0 w-full lg:w-auto">
+          <div className="mt-4 md:mt-0">
             <CustomButton 
               variant="primary" 
               icon={<Plus size={18} />}
-              className="w-full lg:w-auto"
+              className="w-full md:w-auto bg-[#FF5A5F] hover:bg-[#FF4448]"
             >
               New Carousel
             </CustomButton>
           </div>
         </div>
         
-        <div className="grid grid-cols-1 gap-6 md:gap-8">
+        <div className="space-y-6">
           <section>
-            <h2 className="text-xl md:text-2xl font-bold font-display mb-3 md:mb-4">Current Project</h2>
-            <div className="bg-white p-4 md:p-6 border-2 border-black shadow-neo">
+            <h2 className="text-xl font-bold font-display mb-4">Current Project</h2>
+            <div className="bg-white border-2 border-black shadow-neo">
               <CarouselEditor />
             </div>
           </section>
           
           <section>
-            <h2 className="text-xl md:text-2xl font-bold font-display mb-3 md:mb-4">Recent Projects</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <h2 className="text-xl font-bold font-display mb-4">Recent Projects</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[1, 2, 3].map((item) => (
-                <div key={item} className="neo-card p-4 md:p-5 hover:-translate-y-1 transition-all duration-300">
+                <div key={item} className="neo-card p-4 hover:-translate-y-1 transition-all duration-300">
                   <div className="flex items-start justify-between mb-3">
                     <div className="p-2 bg-gray-100 rounded-md border border-gray-200">
                       <FileText size={isMobile ? 18 : 20} />

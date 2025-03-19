@@ -50,12 +50,13 @@ const CarouselPreview: React.FC<CarouselPreviewProps> = ({ project }) => {
           size="sm"
           icon={<Download size={16} />}
           onClick={handleDownload}
+          className="bg-[#FF5A5F] hover:bg-[#FF4448]"
         >
           Download
         </CustomButton>
       </div>
       
-      <div className="relative w-full max-w-md mx-auto">
+      <div className="relative w-full max-w-md mx-auto border-2 border-black">
         <div 
           className={cn(
             "relative w-full overflow-hidden",
@@ -70,7 +71,7 @@ const CarouselPreview: React.FC<CarouselPreviewProps> = ({ project }) => {
           />
           
           {/* Navigation arrows */}
-          <div className="absolute inset-0 flex items-center justify-between pointer-events-none">
+          <div className="absolute inset-0 flex items-center justify-between pointer-events-none px-2">
             <button 
               onClick={goToPrevSlide}
               className={cn(
@@ -97,7 +98,7 @@ const CarouselPreview: React.FC<CarouselPreviewProps> = ({ project }) => {
         </div>
         
         {/* Slide indicators */}
-        <div className="flex justify-center space-x-2 mt-4">
+        <div className="flex justify-center space-x-2 mt-4 mb-2">
           {project.slides.map((_, index) => (
             <button
               key={index}
@@ -105,7 +106,7 @@ const CarouselPreview: React.FC<CarouselPreviewProps> = ({ project }) => {
               className={cn(
                 "w-3 h-3 rounded-full transition-all",
                 index === currentSlide 
-                  ? "bg-neobrutalism-primary scale-125" 
+                  ? "bg-[#FF5A5F] scale-125" 
                   : "bg-gray-300 hover:bg-gray-400"
               )}
               aria-label={`Go to slide ${index + 1}`}
